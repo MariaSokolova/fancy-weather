@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  max-width: 144rem;
+  background: rgba(8, 15, 26, 0.59) url("../img/bg1.jpg") top no-repeat;
+  //background: linear-gradient(180deg, rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%) url("../img/bg1.jpg") top no-repeat;
+  //background: linear-gradient(180deg, rgba(8, 15, 26, 0.59) 0%, rgba(17, 17, 46, 0.46) 100%);
+  background-size: cover;
+}

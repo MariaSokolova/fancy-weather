@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy weather</title>
+    <link rel="stylesheet" href="dist/bundle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="wrapper">
+        <div class="dashboard">
+            <div class="dashboard__controls">
+                <div class="button dashboard__refresh">
+                    <span class="spinner"></span>
+                </div>
+                <div class="dashboard__language">
+                    <select name="" class="button" id="">
+                        <option name="" value="en">EN</option>
+                        <option name="" value="pl">PL</option>
+                    </select>
+                </div>
+                <div class="dashboard__temp">
+                    <div class="button button__fahrenheit inactive">&deg;F</div>
+                    <div class="button button__celsius">&deg;C</div>
+                </div>
+            </div>
+
+            <form action="" class="dashboard__search">
+                <input type="search" placeholder="Search city" class="dashboard__input">
+                <button class="button button__search">Search</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+<script src="dist/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.button {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-transform: uppercase;
+  padding: 1.3rem 1.5rem 1.6rem;
+  color: $color-text;
+  background: rgba(174, 181, 185, 0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+
+
+  &__fahrenheit {
+    border-radius: .5rem 0 0 .5rem;
+  }
+
+  &__celsius {
+    border-radius: 0 .5rem .5rem 0;
+  }
+
+  &__search {
+    border-radius: 0 .5rem .5rem 0;
+    padding: 1.3rem 2rem 1.6rem;
+  }
+}
+
+.spinner {
+  background: url("../img/spinner.svg") center no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+}
+
+.inactive {
+  background: rgba(76, 82, 85, 0.4);
+}

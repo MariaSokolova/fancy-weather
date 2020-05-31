@@ -1,0 +1,46 @@
+.dashboard {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+
+  &__controls {
+    display: flex;
+  }
+
+  &__refresh {
+    background: url("../img/bg-refresh.svg") center no-repeat;
+  }
+
+  &__language {
+    margin: 0 1rem;
+  }
+
+  &__temp {
+    display: flex;
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    padding: 1.3rem 6rem 1.3rem 1.5rem;
+    background: rgba(76, 82, 85, 0.4);
+    border: 1px solid rgba(228, 227, 227, 0.2);
+    border-radius: .5rem 0 0 .5rem;
+    align-items: center;
+  }
+}
+
+::placeholder {
+  color: $color-text;
+}
+
+
