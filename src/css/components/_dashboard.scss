@@ -7,10 +7,6 @@
     display: flex;
   }
 
-  &__refresh {
-    background: url("../img/bg-refresh.svg") center no-repeat;
-  }
-
   &__language {
     margin: 0 1rem;
   }
@@ -26,11 +22,7 @@
 
   &__input {
     font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    letter-spacing: 1px;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
+    @include font($size: 1.4rem,  $height: 1.8rem, $weight: normal);
     padding: 1.3rem 6rem 1.3rem 1.5rem;
     background: rgba(76, 82, 85, 0.4);
     border: 1px solid rgba(228, 227, 227, 0.2);

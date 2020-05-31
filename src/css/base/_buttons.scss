@@ -1,18 +1,14 @@
 .button {
   font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
+  @include font($size: 1.4rem,  $height: 1.7rem, $weight: bold);
   text-transform: uppercase;
-  padding: 1.3rem 1.5rem 1.6rem;
   color: $color-text;
+  padding: 1.3rem 1.5rem 1.6rem;
   background: rgba(174, 181, 185, 0.5);
   border-radius: 5px;
   cursor: pointer;
   border: 0;
   outline: none;
-
 
   &__fahrenheit {
     border-radius: .5rem 0 0 .5rem;

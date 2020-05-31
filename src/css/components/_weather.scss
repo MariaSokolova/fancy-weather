@@ -1,0 +1,77 @@
+.weather {
+  display: flex;
+  justify-content: space-between;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    width: 60%;
+  }
+
+  &__city {
+    @include font($size: 4.4rem, $height: 5.4rem, $weight: bold);
+    padding-top: 5rem;
+  }
+
+  &__date {
+    @include font($size: 2.4rem, $height: 2.9rem, $weight: 600);
+  }
+
+  &__today {
+    display: grid;
+    grid-template-areas: "temp img" "temp prop";
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+  }
+
+  &__future {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__map{
+    width: 40%;
+  }
+}
+
+.today {
+  &__temperature {
+    @include font($size: 30.6rem, $height: 37.3rem);
+    grid-area: temp;
+    padding-top: 5rem;
+  }
+
+  &__img {
+    grid-area: img;
+  }
+
+  &__description {
+    @include font($size: 2.2rem, $height: 3.7rem);
+    grid-area: prop;
+  }
+}
+
+.future {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 31%;
+
+  &__day {
+    @include font($size: 2.2rem, $height: 3.7rem);
+    width: 100%;
+    text-align: center;
+  }
+
+  &__temperature {
+    @include font($size: 8rem, $height: 9.8rem, $weight: 600);
+    width: 55%;
+  }
+
+  &__img {
+    width: 30%;
+  }
+}
+
