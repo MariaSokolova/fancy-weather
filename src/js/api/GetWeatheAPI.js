@@ -6,9 +6,12 @@ export const getWeather = async (lat, lon) => {
 
   const response = await fetch(base + query);
   const data = await response.json();
-  console.log('data = ', data[0]);
+  // console.log('data = ', data);
+  // const temperatureToday = data[0].temp[0].min.value;
+  // console.log('data.temp = ', data[0].temp[0].min.value);
 
-  // return data[0];
+
+  return data;
 };
 
 
