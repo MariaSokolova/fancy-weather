@@ -44,7 +44,7 @@ const createTodayWeather = (current, city, country) => {
   const speed = Math.floor(current.wind_speed.value);
   const humidity = Math.floor(current.humidity.value);
   const feelsLike = Math.floor(current.feels_like.value);
-  const img = current.weather_code.value;
+  const img = current.weather_code.value.replace(/_/, ' ');
   const currentTime = getDateTime();
 
   const weatherCity = createItem('div', ['weather__city'], `${city}, ${country}`, null, null);
@@ -61,7 +61,7 @@ const createTodayWeather = (current, city, country) => {
 
   const descriptionContainer = createItem('div', ['today__description'], null, null);
 
-  const descriptionCode = createItem('div', ['today__description-prop'], `${temp}&deg;`, null, null);
+  const descriptionCode = createItem('div', ['today__description-prop'], `${img}`, null, null);
   const descriptionFeels = createItem('div', ['today__description-prop'], `Feels like: ${feelsLike}&deg;`, null, null);
   const descriptionWind = createItem('div', ['today__description-prop'], `Wind: ${speed} m/s`, null, null);
   const descriptionHumidity = createItem('div', ['today__description-prop'], `${humidity}%`, null, null);
