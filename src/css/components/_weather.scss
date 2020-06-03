@@ -17,6 +17,7 @@
 
   &__date {
     @include font($size: 2.4rem, $height: 2.9rem, $weight: 600);
+    text-transform: none;
   }
 
   &__today {

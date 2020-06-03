@@ -1,7 +1,13 @@
-export const renderWeather = (weather, current, city, country) => {
+import {getDateTime} from "../utils";
 
+export const renderWeather = (weather, current, city, country) => {
   createTodayWeather(current, city, country);
   createFutureWeather(weather);
+
+  const divWeatherDate  = document.querySelector('.weather__date');
+  setInterval(() => {
+    divWeatherDate.innerHTML = getDateTime();
+  },  1000)
 };
 
 function createItem(tagName, classNames, text, attr, attrName) {
@@ -25,7 +31,6 @@ const appendChild = (element, children) => {
 };
 
 const getTemperature = (weather) => {
-  console.log('weather = ', weather);
   let forecastArr = [];
   for (let i = 0; i < 3; i++) {
     forecastArr.push( Math.floor(weather[i].temp[1].max.value));
@@ -34,16 +39,16 @@ const getTemperature = (weather) => {
 };
 
 const createTodayWeather = (current, city, country) => {
-  console.log('current = ', current);
 
   const temp = Math.floor(current.temp.value);
   const speed = Math.floor(current.wind_speed.value);
   const humidity = Math.floor(current.humidity.value);
   const feelsLike = Math.floor(current.feels_like.value);
   const img = current.weather_code.value;
+  const currentTime = getDateTime();
 
   const weatherCity = createItem('div', ['weather__city'], `${city}, ${country}`, null, null);
-  const weatherDate = createItem('div', ['weather__date'], `Mon 28 October  7:32`, null, null);
+  const weatherDate = createItem('div', ['weather__date'], currentTime, null, null);
   const weatherToday = createItem('div', ['weather__today', 'today'], null, null, null);
 
   const weatherContainer = document.getElementsByClassName('weather__container')[0];
@@ -63,7 +68,6 @@ const createTodayWeather = (current, city, country) => {
 
   appendChild(weatherToday, [todayTemperature, todayImg, descriptionContainer]);
   appendChild(descriptionContainer, [descriptionCode, descriptionFeels, descriptionWind, descriptionHumidity]);
-
 };
 
 const createFutureWeather = (weather) => {
