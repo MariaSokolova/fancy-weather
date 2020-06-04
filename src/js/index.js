@@ -9,7 +9,7 @@ async function init() {
   const {city, country, lat, lon} = await getLocation();
   const weather = await getWeather(lat, lon);
   const current = await getCurrentWeather(lat, lon);
-  console.log('current = ', current);
+  console.log('weather = ', weather);
   renderWeather(weather, current, city, country);
   getDateTime();
 }
