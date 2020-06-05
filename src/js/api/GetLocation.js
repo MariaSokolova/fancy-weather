@@ -9,8 +9,11 @@ export const getLocation = async () => {
   const [lat, lon] = data.loc.split(',');
   const city = data.city;
   const country = data.country;
-  // console.log('data =', data);
+  console.log('[lat, lon] =', [lat, lon]);
+  console.log('lat =', typeof lat);
 
   return {city, country, lat, lon};
 };
+
+
 

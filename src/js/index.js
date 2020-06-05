@@ -4,6 +4,7 @@ import {getLocation} from './api/GetLocation';
 import {renderWeather} from './view/renderWeather';
 import {getDateTime} from './utils';
 import {getMap} from "./api/GetMap";
+import {renderLocation} from "./view/renderLocation";
 
 
 
@@ -15,6 +16,7 @@ async function init() {
   // console.log('weather = ', weather);
   renderWeather(weather, current, city, country);
   getDateTime();
+  renderLocation(lat, lon);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

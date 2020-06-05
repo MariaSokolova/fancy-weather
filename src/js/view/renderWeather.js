@@ -1,5 +1,8 @@
 import {getDateTime} from "../utils";
+import {createItem} from "../utils";
+import {appendChild} from "../utils";
 import dataArray from "../data";
+
 
 export const renderWeather = (weather, current, city, country) => {
   createTodayWeather(current, city, country);
@@ -9,27 +12,6 @@ export const renderWeather = (weather, current, city, country) => {
   setInterval(() => {
     divWeatherDate.innerHTML = getDateTime();
   }, 1000)
-};
-
-function createItem(tagName, classNames, text, attr, attrName) {
-  const item = document.createElement(tagName);
-  if (classNames) {
-    classNames.forEach((el) => item.classList.add(el));
-  }
-  item.innerHTML = text;
-  if (attr === null) {
-    return item;
-  } else {
-    item.setAttribute(attr, attrName);
-  }
-  return item;
-}
-
-const appendChild = (element, children) => {
-  if (children) {
-    children.forEach((child) => element.appendChild(child));
-  }
-  return element;
 };
 
 const createTodayWeather = (current, city, country) => {

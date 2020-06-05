@@ -1,4 +1,5 @@
 import dataArray from './data';
+import {getLocation} from './api/GetLocation';
 
 export function getDateTime() {
   const date = new Date();
@@ -18,3 +19,31 @@ export function getDateTime() {
   return dateTime;
 }
 
+export const locationTransform = (coordinate) => {
+  const number = parseFloat(coordinate).toFixed(2);
+  const degrees = Math.trunc(number);
+  const minutes = number.toString().split('.')[1];
+  return `${degrees}&deg;${minutes}&prime;`;
+
+};
+
+export const createItem = (tagName, classNames, text, attr, attrName) => {
+  const item = document.createElement(tagName);
+  if (classNames) {
+    classNames.forEach((el) => item.classList.add(el));
+  }
+  item.innerHTML = text;
+  if (attr === null) {
+    return item;
+  } else {
+    item.setAttribute(attr, attrName);
+  }
+  return item;
+};
+
+export const appendChild = (element, children) => {
+  if (children) {
+    children.forEach((child) => element.appendChild(child));
+  }
+  return element;
+};

@@ -39,11 +39,8 @@
         </div>
         <div class="weather">
             <div class="weather__container"></div>
-
             <div class="weather__map map leaflet">
-
-
-                <div id="mapid" class="leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" tabindex="0">
+                <div id="mapid" class="map__view leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" tabindex="0">
                     <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
                         <div class="leaflet-pane leaflet-tile-pane">
                             <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
@@ -100,12 +97,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="map__view"></div>
-                <div class="map__location"></div>
+                <div class="map__coordinates">
+                    <div class="map__lat"></div>
+                    <div class="map__lon"></div>
+                </div>
             </div>
         </div>
     </div>
-
 </main>
 <script>
   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
