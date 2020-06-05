@@ -3,13 +3,16 @@ import {getWeather, getCurrentWeather} from './api/GetWeatheAPI';
 import {getLocation} from './api/GetLocation';
 import {renderWeather} from './view/renderWeather';
 import {getDateTime} from './utils';
+import {getMap} from "./api/GetMap";
+
 
 
 async function init() {
   const {city, country, lat, lon} = await getLocation();
   const weather = await getWeather(lat, lon);
   const current = await getCurrentWeather(lat, lon);
-  console.log('weather = ', weather);
+  const map = await getMap(lat, lon);
+  // console.log('weather = ', weather);
   renderWeather(weather, current, city, country);
   getDateTime();
 }
