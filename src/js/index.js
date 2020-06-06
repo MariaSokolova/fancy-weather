@@ -1,10 +1,17 @@
 import '../css/style.scss';
+
 import {getWeather, getCurrentWeather} from './api/GetWeatheAPI';
 import {getLocation} from './api/GetLocation';
+
 import {renderWeather} from './view/renderWeather';
-import {getDateTime} from './utils';
-import {getMap} from "./api/GetMap";
+import {renderMap} from './view/renderMap';
 import {renderLocation} from "./view/renderLocation";
+
+import {getDateTime} from './utils';
+
+import {searchLocation} from "./controls/seachControl";
+
+
 
 
 
@@ -12,17 +19,21 @@ async function init() {
   const {city, country, lat, lon} = await getLocation();
   const weather = await getWeather(lat, lon);
   const current = await getCurrentWeather(lat, lon);
-  const map = await getMap(lat, lon);
-  // console.log('weather = ', weather);
+  console.log('weather = ', weather);
   renderWeather(weather, current, city, country);
   getDateTime();
   renderLocation(lat, lon);
+  renderMap(lat, lon);
+  searchLocation();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('EventListener');
   init();
 });
+
+
+
 
 // const current = {
 //   lat: 50.0614,

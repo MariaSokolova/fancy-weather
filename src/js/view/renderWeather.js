@@ -28,7 +28,8 @@ const createTodayWeather = (current, city, country) => {
   const weatherDate = createItem('div', ['weather__date'], currentTime, null, null);
   const weatherToday = createItem('div', ['weather__today', 'today'], null, null, null);
 
-  const weatherContainer = document.getElementsByClassName('weather__container')[0];
+  const weatherContainer = document.querySelector('.weather__container');
+  weatherContainer.innerHTML = '';
   weatherContainer.appendChild(weatherCity);
   weatherContainer.appendChild(weatherDate);
   weatherContainer.appendChild(weatherToday);

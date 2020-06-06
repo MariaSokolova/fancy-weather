@@ -1,5 +1,4 @@
 import dataArray from './data';
-import {getLocation} from './api/GetLocation';
 
 export function getDateTime() {
   const date = new Date();
@@ -47,3 +46,12 @@ export const appendChild = (element, children) => {
   }
   return element;
 };
+
+
+
+  // return input;
+
+  // console.log('input.value = ', input.value);
+
+
+
