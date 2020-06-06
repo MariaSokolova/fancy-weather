@@ -37,7 +37,7 @@
     color: $color-text;
   }
 
-  &__error-message {
+    &__error-message {
     color: red;
     @include font($size: 1.4rem,  $height: 1.8rem, $weight: normal);
   }

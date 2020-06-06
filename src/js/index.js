@@ -2,24 +2,24 @@ import '../css/style.scss';
 
 import {getWeather, getCurrentWeather} from './api/GetWeatheAPI';
 import {getLocation} from './api/GetLocation';
+import {getImage} from './api/imageAPI';
 
 import {renderWeather} from './view/renderWeather';
 import {renderMap} from './view/renderMap';
 import {renderLocation} from "./view/renderLocation";
+import {renderImage} from "./view/renderBackground";
 
 import {getDateTime} from './utils';
 
 import {searchLocation} from "./controls/seachControl";
 
 
-
-
-
 async function init() {
-  const {city, country, lat, lon} = await getLocation();
+  const imgUrl = await getImage();
+  renderImage(imgUrl);
+  const { city, country, lat, lon } = await getLocation();
   const weather = await getWeather(lat, lon);
   const current = await getCurrentWeather(lat, lon);
-  console.log('weather = ', weather);
   renderWeather(weather, current, city, country);
   getDateTime();
   renderLocation(lat, lon);
@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // console.log('EventListener');
   init();
 });
-
-
 
 
 // const current = {
