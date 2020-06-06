@@ -11,6 +11,13 @@ import {getDateTime} from "../utils";
 export const searchLocation = () => {
   const searchButton = document.getElementById('search');
   searchButton.addEventListener('click', handler);
+  const input = document.getElementById("city");
+  input.addEventListener("keyup", function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handler();
+    }
+  })
 };
 
 const getCityName = () => {
