@@ -10,6 +10,7 @@
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     flex: 1 1 60%;
+    max-width: 70rem;
   }
 
   &__city {
@@ -49,6 +50,10 @@
 
   &__map{
     flex: 1 1 30%;
+    max-width: 34.5rem;
+    @include media-laptop {
+      max-width: none;
+    }
     @include media-tablet {
       flex: 1 1 45%;
     }
