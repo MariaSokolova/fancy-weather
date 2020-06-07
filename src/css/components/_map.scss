@@ -7,6 +7,10 @@
     text-align: end;
     font-family: 'Montserrat', sans-serif;
     @include font($size: 2rem, $height: 3.5rem, $weight: normal);
+    @include media-laptop {
+      @include font($size: 1.6rem, $height: 2.5rem, $weight: normal);
+
+    }
   }
 }
 
@@ -15,5 +19,5 @@
   height: 350px;
   position: relative;
   border-radius: 5%;
-  top: 15%;
+  //top: 15%;
 }
