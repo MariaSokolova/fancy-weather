@@ -11,6 +11,11 @@
     }
   }
 
+  &__refresh {
+    background: url("../img/bg-refresh.svg");
+    background-size: 4.5rem;
+  }
+
   &__language {
     margin: 0 1rem;
   }
@@ -62,5 +67,3 @@
     @include font($size: 1.4rem,  $height: 2.8rem);
   }
 }
-
-

@@ -1,10 +1,11 @@
 import {getGeocode} from "../api/getGeocode";
 import {getCurrentWeather, getWeather} from "../api/GetWeatheAPI";
+import {getImage} from '../api/imageAPI';
 
 import {renderWeather} from "../view/renderWeather";
 import {renderLocation} from "../view/renderLocation";
 import {flyToMapLocation} from "../view/renderMap";
-
+import {renderImage} from "../view/renderBackground";
 
 import {getDateTime} from "../utils";
 
@@ -46,7 +47,30 @@ const renderNewWeather = async (cityName) => {
   flyToMapLocation(lat, lon);
 };
 
+export const reloadImage = () => {
+  const refreshButton = document.querySelector('.dashboard__refresh');
+  refreshButton.addEventListener('click', changeImage);
+};
 
+const changeImage = async () => {
+  startAnimation();
+  const imgUrl = await getImage();
+
+  renderImage(imgUrl);
+  setTimeout(() => {
+    stopAnimation()
+  }, 2000);
+};
+
+const startAnimation = () => {
+  const spin = document.querySelector('.spinner');
+  spin.classList.add('spinner__active');
+};
+
+const stopAnimation = () => {
+  const spin = document.querySelector('.spinner');
+  spin.classList.remove('spinner__active');
+};
 
 
 
