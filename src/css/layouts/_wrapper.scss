@@ -1,3 +1,13 @@
 .wrapper {
   padding: 0 9rem;
+  @include media-laptop {
+    padding: 0 5rem;
+  }
+  @include media-tablet {
+    padding: 0 2rem;
+  }
+}
+.background {
+  background: url("https://images.unsplash.com/photo-1493314894560-5c412a56c17c?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjE0MDI2OH0") center no-repeat;
+  background-size: cover;
 }
