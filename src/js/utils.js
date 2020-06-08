@@ -1,7 +1,5 @@
 import dataArray from './data';
 
-import {getGeocode} from './api/getGeocode';
-
 export function getDateTime(offset) {
   const utcMillis = Date.now();
   const date = new Date(utcMillis + offset * 1000);
@@ -50,18 +48,3 @@ export const appendChild = (element, children) => {
   }
   return element;
 };
-
-export const toFahrenheit = (val) => {
-  if (!val || typeof val !== 'number') {
-    throw new Error('Wrong type of temperature')
-  }
-  return Math.round((val * 9) / 5 + 32);
-};
-
-
-// return input;
-
-// console.log('input.value = ', input.value);
-
-
-

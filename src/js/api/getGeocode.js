@@ -1,6 +1,6 @@
 
 
-export  const getGeocode =  async (input) => {
+export const getGeocode =  async (input) => {
   const query = `https://api.opencagedata.com/geocode/v1/json?q=${input}&language=en&key=b9c4c3320b904a8286f96c795db7626f`;
   const data = await fetch(query);
   const jsonData = await data.json();
