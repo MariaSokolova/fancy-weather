@@ -11,12 +11,12 @@ import {renderImage} from "./view/renderBackground";
 
 import {getDateTime} from './utils';
 
-import {searchLocation, reloadImage} from "./controls/seachControl";
+import {searchLocation, reloadImage, changeTemperature} from "./controls/seachControl";
 
 
 async function init() {
 
-  const { city, country, lat, lon } = await getLocation();
+  const { city, country, lat, lon, offset } = await getLocation();
   // const weather = await getWeather(lat, lon);
 
 
@@ -25,14 +25,17 @@ async function init() {
 
 
   // const current = await getCurrentWeather(lat, lon);
+  // console.log('current = ', current);
+  //
   // const imgUrl = await getImage();
   // renderImage(imgUrl);
-  renderWeather(weather, current, city, country);
-  getDateTime();
+  renderWeather(weather, current, city, country, offset);
+  getDateTime(offset);
   renderLocation(lat, lon);
   renderMap(lat, lon);
   searchLocation();
-  reloadImage()
+  reloadImage();
+  changeTemperature();
 }
 
 document.addEventListener('DOMContentLoaded', () => {

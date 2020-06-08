@@ -1,12 +1,16 @@
 import dataArray from './data';
 
-export function getDateTime() {
-  const date = new Date();
-  const month = dataArray.month[date.getMonth()];
-  const weekDay = dataArray.weekShort[date.getDay()];
-  const day = date.getDate();
+import {getGeocode} from './api/getGeocode';
 
-  let h = date.getHours();
+export function getDateTime(offset) {
+  const utcMillis = Date.now();
+  const date = new Date(utcMillis + offset * 1000);
+  const month = dataArray.month[date.getUTCMonth()];
+  const weekDay = dataArray.weekShort[date.getUTCDay()];
+  const day = date.getUTCDate();
+
+  let h = date.getUTCHours();
+
   let m = date.getMinutes();
   let s = date.getSeconds();
 
@@ -47,11 +51,17 @@ export const appendChild = (element, children) => {
   return element;
 };
 
+export const toFahrenheit = (val) => {
+  if (!val || typeof val !== 'number') {
+    throw new Error('Wrong type of temperature')
+  }
+  return Math.round((val * 9) / 5 + 32);
+};
 
 
-  // return input;
+// return input;
 
-  // console.log('input.value = ', input.value);
+// console.log('input.value = ', input.value);
 
 
 

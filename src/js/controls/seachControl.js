@@ -7,7 +7,7 @@ import {renderLocation} from "../view/renderLocation";
 import {flyToMapLocation} from "../view/renderMap";
 import {renderImage} from "../view/renderBackground";
 
-import {getDateTime} from "../utils";
+import {getDateTime, toFahrenheit} from "../utils";
 
 export const searchLocation = () => {
   const searchButton = document.getElementById('search');
@@ -21,12 +21,12 @@ export const searchLocation = () => {
   })
 };
 
-const getCityName = () => {
+const getInputValue = () => {
   return document.getElementById('city').value;
 };
 
 const handler =  async () => {
-  const cityName = getCityName();
+  const cityName = getInputValue();
   const divMessage  = document.getElementById('error');
   if (cityName === '') {
     divMessage.innerText = 'input correct City';
@@ -37,15 +37,19 @@ const handler =  async () => {
 };
 
 const renderNewWeather = async (cityName) => {
-  const { city, country, lat, lon } = await getGeocode(cityName);
+  const { city, country, lat, lon, offset } = await getGeocode(cityName);
+  console.log('offset = ', offset);
+
   const weather = await getWeather(lat, lon);
   const current = await getCurrentWeather(lat, lon);
   console.log('weather = ', weather);
-  renderWeather(weather, current, city, country);
-  getDateTime();
+  renderWeather(weather, current, city, country, offset);
+  getDateTime(offset);
   renderLocation(lat, lon);
   flyToMapLocation(lat, lon);
 };
+
+
 
 export const reloadImage = () => {
   const refreshButton = document.querySelector('.dashboard__refresh');
@@ -55,7 +59,6 @@ export const reloadImage = () => {
 const changeImage = async () => {
   startAnimation();
   const imgUrl = await getImage();
-
   renderImage(imgUrl);
   setTimeout(() => {
     stopAnimation()
@@ -73,5 +76,33 @@ const stopAnimation = () => {
 };
 
 
+
+
+export const changeTemperature = () => {
+  const buttonC = document.querySelector('.button__celsius');
+  const buttonF = document.querySelector('.button__fahrenheit');
+  // f.addEventListener('click', temperatureHandler);
+  buttonF.addEventListener('click', () => {
+    buttonC.classList.add('inactive');
+    buttonF.classList.remove('inactive');
+    const buttonFonClick = true;
+    console.log('buttonFonClick = ', buttonFonClick);
+    return buttonFonClick;
+  });
+
+  buttonC.addEventListener('click', () => {
+    buttonF.classList.add('inactive');
+    buttonC.classList.remove('inactive');
+    const buttonFonClick = false;
+    console.log('buttonFonClick = ', buttonFonClick);
+    return buttonFonClick;
+  });
+
+};
+
+// const temperatureHandler = (c, f) => {
+//   c.classList.add('inactive');
+//   f.classList.remove('inactive');
+// };
 
 

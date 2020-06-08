@@ -1,28 +1,36 @@
 import {getDateTime} from "../utils";
 import {createItem} from "../utils";
 import {appendChild} from "../utils";
+
 import dataArray from "../data";
 
+import {changeTemperature} from "../controls/seachControl";
 
-export const renderWeather = (weather, current, city, country) => {
-  createTodayWeather(current, city, country);
+
+
+export const renderWeather = (weather, current, city, country, offset) => {
+  createTodayWeather(current, city, country, offset);
   createFutureWeather(weather);
 
   const divWeatherDate = document.querySelector('.weather__date');
   setInterval(() => {
-    divWeatherDate.innerHTML = getDateTime();
+    divWeatherDate.innerHTML = getDateTime(offset);
   }, 1000)
 };
 
-const createTodayWeather = (current, city, country) => {
+const createTodayWeather = (current, city, country, offset, buttonFonClick) => {
+
+
 
   const temp = Math.floor(current.temp.value);
+
+
   const speed = Math.floor(current.wind_speed.value);
   const humidity = Math.floor(current.humidity.value);
   const feelsLike = Math.floor(current.feels_like.value);
   const img = current.weather_code.value;
   const imgName = current.weather_code.value.replace(/_/, ' ');
-  const currentTime = getDateTime();
+  const currentTime = getDateTime(offset);
 
   const weatherCity = createItem('div', ['weather__city'], `${city}, ${country}`, null, null);
   const weatherDate = createItem('div', ['weather__date'], currentTime, null, null);
