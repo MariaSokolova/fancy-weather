@@ -9,6 +9,7 @@ export class SearchControl {
   constructor(weatherDom) {
     this.weatherDom = weatherDom;
     this.searchLocationInit();
+    this.divMessage = document.getElementById('error');
   }
 
   searchLocationInit() {
@@ -30,19 +31,26 @@ export class SearchControl {
     return document.getElementById('city').value;
   };
 
-  handler() {
+  async handler() {
     const cityName = this.getInputValue();
-    const divMessage = document.getElementById('error');
     if (cityName === '') {
-      divMessage.innerText = 'input correct City';
+      this.divMessage.innerText = 'Please, input correct City';
       return;
     }
-    divMessage.innerText = '';
-    this.renderNewWeather(cityName);
+    this.divMessage.innerText = '';
+    try {
+      await this.renderNewWeather(cityName);
+    } catch (e) {
+      this.divMessage.innerText = 'Error. Please refresh the page';
+    }
   };
 
   async renderNewWeather(cityName) {
     const { city, country, lat, lon, offset } = await getGeocode(cityName);
+    if (!city) {
+      this.divMessage.innerText = 'Please, input correct City';
+      return;
+    }
     console.log('offset = ', offset);
 
     const weather = await getWeather(lat, lon);
