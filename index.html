@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+<link href="bundle.css" rel="stylesheet"></head>
+<body id="body">
+<div id="bg" class="background">
+    <main>
+        <div class="wrapper">
+            <div class="dashboard">
+                <div class="dashboard__controls">
+                    <div class="button dashboard__refresh">
+                        <span class="spinner"></span>
+                    </div>
+                    <div class="dashboard__language">
+                        <select name="" class="button" id="">
+                            <option name="" value="en">EN</option>
+                            <option name="" value="pl">PL</option>
+                        </select>
+                    </div>
+                    <div class="dashboard__temp">
+                        <div class="button button__fahrenheit inactive">&deg;F</div>
+                        <div class="button button__celsius">&deg;C</div>
+                    </div>
+                </div>
+                <div class="dashboard__search-container">
+                    <div class="dashboard__search">
+                        <input type="search" id="city" placeholder="Search city" class="dashboard__input">
+                        <button id="search" class="button button__search">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div id="error" class="dashboard-error"></div>
+            <div class="weather">
+                <div class="weather__container"></div>
+                <div class="weather__map map leaflet"></div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="bundle.js"></script></body>
+</html>
