@@ -6,36 +6,42 @@ To start the project please use `npm start`;
 
 
 -------
-#####Max score for the task - 280 points.
 
-####Basic scope +80
--[x] Page layout should be adaptive or responsive - 20 points
+Application structure
+The application consists of 4 functional units.
+
+## Unit 1. Dashboard
+- button for changing the background image;
+- button to toggle languages;
+- button toggle between Fahrenheit and Celsius;
+- search input.
+## Unit 2. Today's weather
+- name of the town, country name;
+- current date: weekday shortcut, date, month(Mon 29 December);
+- time: hours and minutes, for instance, 18:11, should be updated every minute;
+- current temperature;
+- weather description(summary), feels like temperature,wind speed(m/s), humidity(%);
+- weather icon;
+## Unit 3. Weather forecast for 3 days
+- weekday;
+- average temperature;
+- weather icon.
+## Unit 4. Geolocation data
+- coordinates of user's location - latitude, longitude(in degrees and minutes);
+- location map.
+
+
+-[x] Page layout is adaptive
    - min page width - 320 px;
--[x] the 2nd unit renders data related to the current user location - 20 points;
--[x] the 3rd unit displays weather forecast for 3 upcoming days, corresponding to the current user location - 20 point;
--[x] the 4th unit shows geolocation data, corresponding to the current user location( latitude, longitude, map) - 20 points;
-
-####Advanced scope +80/+130
-
--[x] should be updated according to a new location, including date and time - 60 points;
--[x] the background image should change after the page reloads or user clicks on the toggle image button - 20 points;
--[x] implementation of the toggle between temperature units - 10 points;
--[ ] code requirements are fulfilled - 30 points (can be evaluated by mentor only)
+-[x] the 2nd unit renders data related to the current user location;
+-[x] the 3rd unit displays weather forecast for 3 upcoming days, corresponding to the current user location;
+-[x] the 4th unit shows geolocation data, corresponding to the current user location( latitude, longitude, map);
+-[x] updated according to a new location, including date and time;
+-[x] the background image changes after the page reloads or user clicks on the toggle image button;
+-[x] implementation of the toggle between temperature units;
+-[x] code requirements are fulfilled
   - html-elements generated in js;
   - js code split for modules;
   - webpack was used;
-  - editorconfig, eslint, eslint-config-airbnb-base, babel were used;
   
-####Hacker scope +90
 
--[x] implemented voice search by the location name -20 points;
--[x] code covered with unit tests - 2 points per test, ceiling - 20 points(max - 10 tests) (can be evaluated by mentor only);
--[x] localisation(translate) of the page (English, Georgian/Polish) - 20 points;
--[x] Bonus points for the code/feature quality - 20 points(can be evaluated by mentor only)
--[x] buttons, icons in the application are animated, animations are implemented via @keyframes;
--[x] custom features/elements not described higher was implemented.
-
-####Fines
--[ ] errors in the console - minus 10 points;
--[ ] API keys used in the application are the same as ones in the task description, not personally generated keys - minus 10 points(can be evaluated by mentor only)
--[ ] less than 6 commits, incorrect commit names, mistakes in a pull request - minus 10 points(can be evaluated by mentor only)
