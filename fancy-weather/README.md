@@ -31,14 +31,14 @@ The application consists of 4 functional units.
 - location map.
 
 
--[x] Page layout is adaptive;
--[x] the 2nd unit renders data related to the current user location;
--[x] the 3rd unit displays weather forecast for 3 upcoming days, corresponding to the current user location;
--[x] the 4th unit shows geolocation data, corresponding to the current user location( latitude, longitude, map);
--[x] updated according to a new location, including date and time;
--[x] the background image changes after the page reloads or user clicks on the toggle image button;
--[x] implementation of the toggle between temperature units;
--[x] code requirements are fulfilled
+- [x] Page layout is adaptive;
+- [x] the 2nd unit renders data related to the current user location;
+- [x] the 3rd unit displays weather forecast for 3 upcoming days, corresponding to the current user location;
+- [x] the 4th unit shows geolocation data, corresponding to the current user location( latitude, longitude, map);
+- [x] updated according to a new location, including date and time;
+- [x] the background image changes after the page reloads or user clicks on the toggle image button;
+- [x] implementation of the toggle between temperature units;
+- [x] code requirements are fulfilled
   - html-elements generated in js;
   - js code split for modules;
   - webpack was used;
