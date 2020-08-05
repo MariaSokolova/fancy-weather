@@ -31,8 +31,7 @@ The application consists of 4 functional units.
 - location map.
 
 
--[x] Page layout is adaptive
-   - min page width - 320 px;
+-[x] Page layout is adaptive;
 -[x] the 2nd unit renders data related to the current user location;
 -[x] the 3rd unit displays weather forecast for 3 upcoming days, corresponding to the current user location;
 -[x] the 4th unit shows geolocation data, corresponding to the current user location( latitude, longitude, map);
