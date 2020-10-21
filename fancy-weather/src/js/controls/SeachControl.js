@@ -51,11 +51,8 @@ export class SearchControl {
       this.divMessage.innerText = 'Please, input correct City';
       return;
     }
-    console.log('offset = ', offset);
-
     const weather = await getWeather(lat, lon);
     const current = await getCurrentWeather(lat, lon);
-    console.log('weather = ', weather);
     this.weatherDom.updateWeather(weather, current, city, country, offset);
     getDateTime(offset);
     renderLocation(lat, lon);

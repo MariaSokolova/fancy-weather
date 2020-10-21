@@ -1,7 +1,6 @@
 import {getDateTime} from "../utils";
 import {createItem} from "../utils";
 import {appendChild} from "../utils";
-
 import dataArray from "../data";
 
 export class Weather {
@@ -47,7 +46,6 @@ export class Weather {
 
     const todayTemperature = createItem('div', ['today__temperature'], `${temp}&deg;`, null, null);
     let todayImg = createItem('div', ['today__img', `${img}`], null, null, null);
-
 
     const descriptionContainer = createItem('div', ['today__description'], null, null);
 
@@ -98,7 +96,7 @@ export class Weather {
   initUnitButtonHandler() {
     const buttonC = document.querySelector('.button__celsius');
     const buttonF = document.querySelector('.button__fahrenheit');
-    // f.addEventListener('click', temperatureHandler);
+
     buttonF.addEventListener('click', () => {
       buttonC.classList.add('inactive');
       buttonF.classList.remove('inactive');
@@ -118,7 +116,6 @@ export class Weather {
     if(this.temperatureUnits === 'Fahrenheit') {
       return this.toFahrenheit(temp);
     }
-
     return temp;
   }
 
